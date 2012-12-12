@@ -147,6 +147,28 @@ files an directories and makes the package readily available;
 contain any code). The files and directories can be edited, and eventually
 pulled and pushed from and to a Git software repository.
 
+Example:
+
+```
+$ julia-release-readline
+[Julia banner]
+julia> require("pkg")
+julia> Pkg.new("MyPackage")
+[Ctrl-D to exit julia]
+$ cd ~/.julia/MyPackage
+```
+
+Just edit `src/MyPackage.jl` as you see fit. Note that that is there is
+existing code in a repository you can pull it here (if Git
+repository, the history is pulled). Create a Git repository MyPackage.jl somewhere
+(github, bitbucket, sourceforge, etc...) if you do not have already one,
+and once the editing is done, just push the code back into the repository).
+
+Use `require(MyPackage)` when in Julia.
+
+**Note:** a better merge with the receipe below might be needed.
+
+
 #### Recipe for packaging an existing repository
 
 If you have already been developing your package, but have not registered it as a package, the following steps should work:
